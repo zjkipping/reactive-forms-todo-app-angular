@@ -1,0 +1,8 @@
+<form [formGroup]="todoForm" (ngSubmit)="submitTodos()">
+  <button>Submit Form</button>
+  <button type="button" (click)="addNewTodo()">Add New Todo</button>
+  <div *ngFor="let todoControl of todos.controls; index as i">
+    <input [formControl]="todoControl" placeholder="Todo Item">
+    <button type="button" (click)="removeTodo(i)">X</button>
+  </div>
+</form>
